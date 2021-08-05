@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Portfolio</title>
+    <link rel='stylesheet' href='website.css'>
+    
+</head>
+<body>
+    <div class="ram">
+    <div class="realmain">
+        <nav>
+            <div id ="name">
+                <img src="images/PSR.png"/>
+            </div>
+            <div class="container">
+            <div class = "button" onclick="scrol('id1')" >Home</div>
+            <div class = "button" onclick="scrol('id1')" >Education</div>
+            <div class = "button" onclick="scrol('id2')" >Projects</div>
+            <div class = "button" onclick="scrol('id1')" >Hobbies</div>
+            <div class = "button" onclick="scrol('id1')" >Contact</div>
+        </div>
+        </nav> 
+        <div class="slideshow" style="width:500px; height : 500px ;padding-bottom: 20px">
+            <img class="slide" src="images/1.jpg" style="width:500px; height : 500px ;object-fit: cover"  >
+            <img class="slide" src="images/2.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/3.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/4.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/5.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/6.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/7.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+            <img class="slide" src="images/8.jpg"  style="width:500px; height : 500px ;object-fit: cover">
+          </div>
+    </div>
+    <div class="main">
+        <div class="details" id = "hobby">
+            <div class="overlap"></div>
+            <img class="me" src="images/me.jpg">
+            <div id = "circle">
+                <div class="Hobbies one">
+                    <!--<img src="images/dance.png">-->
+                    <div><h1>Love to Dance</h1></div>
+                </div>
+                <div class="Hobbies two">
+                    <!--<img src="images/cook.png">-->
+                    <div><h1>Love to Cook</h1></div>
+                </div>
+                <div class="Hobbies three">
+                    <!--<img src="images/book.png">-->
+                    <div><h1>Love to Read</h1></div>
+                </div>
+                <div class="Hobbies four">
+                    <!--<img src="images/sleep.png">-->
+                    <div><h1>Love to Sleep</h1></div>
+                </div>
+            </div>
+
+        </div>  
+        <div class="control">
+            <img id="up" src = "images/arrow.png">
+            <h3>Hobbies</h3>
+            <img id = "down" src = "images/arrow.png">
+
+        </div>     
+
+    </div>
+    <div style="display:none;">
+        <a href="#hobby" id="id1">Link Text Here</a>
+    </div>
+    <div class="main2">
+        
+        <div class="info" id = "project">
+            <div class="overlap2"></div>
+            <img class="me2" src="images/me.jpg">
+            <div id = "circle2">
+                <div class="projects oner">
+                    <div>
+                        <h1>Ambidextrous destroyer</h1>
+                        <p>A game developed in unity</p>
+                    </div>
+                </div>
+                <div class="projects twor">
+                    <div>
+                        <h1>Refree</h1>
+                        <p>Web application in react and django</p>
+                    </div>
+                </div>
+                <div class="projects threer">
+                    <div>
+                        <h1>Code-Visualiser</h1>
+                        <p>Web application.Mainly Worked on SDLC.</p>
+                    </div>
+                </div>
+                <div class="projects fourr">
+                    <div>
+                        <h1>MIPS pipelined processor</h1>
+                        <p>designed in logisim</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>  
+        <div class="control2">
+            <img id="up1" src = "images/arrow.png">
+            <h3>Projects</h3>
+            <img id = "down1" src = "images/arrow.png">
+
+        </div>     
+
+    </div>
+    <div style="display:none;">
+        <a href="#project" id="id2">Link Text Here</a>
+    </div>
+</div>
+    <script>
+        var index = 0;
+        show()
+        function show(){
+            var i;
+            var x = document.getElementsByClassName("slide");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            index++;
+            if (index > x.length) {index = 1}    
+            x[index-1].style.display = "block";  
+            setTimeout(show, 2000);
+        }
+        var circle = document.getElementById("circle");
+        var upbutton = document.getElementById("up");
+        var downbutton = document.getElementById("down");
+        var rotateValue = circle.style.transform;
+        var rotatesum;
+        upbutton.onclick = function()
+        {
+            rotatesum = rotateValue + "rotate(-90deg)";
+            circle.style.transform = rotatesum;
+            rotateValue = rotatesum;
+        }
+        downbutton.onclick = function()
+        {
+            rotatesum = rotateValue + "rotate(90deg)";
+            circle.style.transform = rotatesum;
+            rotateValue = rotatesum;
+        }
+        function scrol(val)
+        { 
+            console.log(document.getElementById(val));
+            document.getElementById(val).click()
+        }
+        var circle2 = document.getElementById("circle2");
+        var upbutton2 = document.getElementById("up1");
+        var downbutton2 = document.getElementById("down1");
+        var rotateValue2 = circle.style.transform;
+        var rotatesum2;
+        upbutton2.onclick = function()
+        {
+            rotatesum2 = rotateValue2 + "rotate(-90deg)";
+            circle2.style.transform = rotatesum2;
+            rotateValue2 = rotatesum2;
+        }
+        downbutton2.onclick = function()
+        {
+            rotatesum2 = rotateValue2 + "rotate(90deg)";
+            circle2.style.transform = rotatesum2;
+            rotateValue2 = rotatesum2;
+        }
+        
+
+    </script>
+</body>
+</html>
